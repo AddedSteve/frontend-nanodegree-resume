@@ -39,6 +39,19 @@ var bio = {
 	}
 };
 
+var work = {
+	jobs: {
+		employer: "Cohaesus",
+		title: "Developer",
+		location: "London, UK",
+		dates: "2015-Present",
+		description: "Front-end developer of websites and web applications."
+	},
+	display: function () {
+		
+	}
+};
+
 var education = {
 	schools: {
 		name: "University of York",
