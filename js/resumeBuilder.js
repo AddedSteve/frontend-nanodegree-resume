@@ -48,7 +48,18 @@ var work = {
 		description: "Front-end developer of websites and web applications."
 	},
 	display: function () {
-		
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs.employer).replace("#", "http://www.cohaesus.co.uk");
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs.title);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs.dates);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs.location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs.description);
+
+		$('#workExperience').append(HTMLworkStart);
+		$('.work-entry').append(formattedEmployer);
+		$('.work-entry a').append(formattedTitle);
+		$('.work-entry').append(formattedDates);
+		$('.work-entry').append(formattedLocation);
+		$('.work-entry').append(formattedDescription);
 	}
 };
 
@@ -84,5 +95,6 @@ var education = {
 };
 
 bio.display();
+work.display();
 education.display();
 
