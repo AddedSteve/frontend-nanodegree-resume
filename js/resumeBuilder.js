@@ -39,26 +39,37 @@ var bio = {
 	}
 };
 
-var education {
+var education = {
 	schools: {
 		name: "University of York",
 		location: "York, UK",
-		degree: "BEng in Electronic Engineering with Media Technology",
-		majors: ["Acoustics", "Cinematography", "Digital Engineering", "Analogue Engineering"],
+		degree: "BEng",
+		majors: ["Electronic Engineering with Media Technology"],
 		dates: 2007,
 		url: "http://www.york.ac.uk/"
 	},
 	onlineCourses: {
-		title: Introduction to Computer Sciene and Programming Using Python,
-		school: MIT,
+		title: "Introduction to Computer Sciene and Programming Using Python",
+		school: "MIT",
 		date: 2015,
 		url: "https://courses.edx.org/courses/course-v1:MITx+6.00.2x_3+1T2015/info"
 	},
 	display: function () {
+		var formattedSchool = HTMLschoolName.replace("%data%", education.schools.name).replace("#", education.schools.url);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools.dates);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools.location);
+		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools.majors);
 
+		$('#education').append(HTMLschoolStart);
+		$('.education-entry').append(formattedSchool);
+		$('.education-entry a').append(formattedDegree);
+		$('.education-entry').append(formattedDates);
+		$('.education-entry').append(formattedLocation);
+		$('.education-entry').append(formattedMajors);
 	}
 };
 
 bio.display();
-
+education.display();
 
