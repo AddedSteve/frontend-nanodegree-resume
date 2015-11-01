@@ -4,19 +4,57 @@ var bio = {
 	contacts: {
 		mobile: "07725550475",
 		email: "ogallaghersteve@gmail.com",
-		github: "http://www.github.com/AddedSteve",
-		twitter: "http://www.twitter.com/AddedSteve",
+		github: "AddedSteve",
+		twitter: "AddedSteve",
 		location: "London, UK"
 	},
 	welcomeMessage: "Hello, and welcome to my resume.",
 	skills: ["HTML", "CSS", "JavaScript", "Python", "Swift"],
-	biopic: "https://pbs.twimg.com/profile_images/600016970780651520/MMUQ1gu7.jpg",
+	biopic: "https://media.licdn.com/media/AAEAAQAAAAAAAAL5AAAAJGUwZTg2MzU1LWJkNmMtNDQ4MC04Y2Y2LTBjOWRmZGViYTZiOQ.jpg",
 	display: function () {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+		var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+		var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		var formattedSkills = function () { 
+			var skillsList = [];
+			bio.skills.forEach(function(val) {
+    			skillsList.push(HTMLskills.replace("%data%", val));
+			});
+			return skillsList;
+		};
+
 		$('#header').prepend(formattedRole);
 		$('#header').prepend(formattedName);
+		$('#topContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+		$('#header').append(formattedBioPic);
+		$('#header').append(formattedWelcome);
+		$('#header').append(HTMLskillsStart);
+		$('#skills').append(formattedSkills);
 	}
+};
+
+var education {
+	schools: {
+		name: string,
+		location: string,
+		degree: string,
+		majors: array of strings,
+		dates: integer (graduation date),
+		url: string
+	},
+	onlineCourses: {
+		title: string,
+		school: string,
+		date: integer (date finished),
+		url: string
+	},
+	display: function () {}
 };
 
 bio.display();
