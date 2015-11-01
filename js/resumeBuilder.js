@@ -41,20 +41,22 @@ var bio = {
 
 var education {
 	schools: {
-		name: string,
-		location: string,
-		degree: string,
-		majors: array of strings,
-		dates: integer (graduation date),
-		url: string
+		name: "University of York",
+		location: "York, UK",
+		degree: "BEng in Electronic Engineering with Media Technology",
+		majors: ["Acoustics", "Cinematography", "Digital Engineering", "Analogue Engineering"],
+		dates: 2007,
+		url: "http://www.york.ac.uk/"
 	},
 	onlineCourses: {
-		title: string,
-		school: string,
-		date: integer (date finished),
-		url: string
+		title: Introduction to Computer Sciene and Programming Using Python,
+		school: MIT,
+		date: 2015,
+		url: "https://courses.edx.org/courses/course-v1:MITx+6.00.2x_3+1T2015/info"
 	},
-	display: function () {}
+	display: function () {
+
+	}
 };
 
 bio.display();
