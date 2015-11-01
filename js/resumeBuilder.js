@@ -63,6 +63,28 @@ var work = {
 	}
 };
 
+var projects = {
+	projects: {
+		title: "Sample Project 1",
+		dates: "Jan 2015-Feb 2015",
+		description: "This is a sample project.",
+		images: ["images/197x148.gif"]
+	},
+	display: function () {
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects.title);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects.dates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects.description);
+		var formattedImages = HTMLprojectImage.replace("%data%", projects.projects.images);
+		// TODO: Improve formattedImages to allow an array
+
+		$('#projects').append(HTMLprojectStart);
+		$('.project-entry').append(formattedTitle);
+		$('.project-entry').append(formattedDates);
+		$('.project-entry').append(formattedDescription);
+		$('.project-entry').append(formattedImages);
+	}
+};
+
 var education = {
 	schools: {
 		name: "University of York",
@@ -96,5 +118,6 @@ var education = {
 
 bio.display();
 work.display();
+projects.display();
 education.display();
 
