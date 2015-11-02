@@ -119,25 +119,40 @@ var education = {
 			'title': 'Introduction to Computer Sciene and Programming Using Python',
 			'school': 'MIT',
 			'date': 2015,
-			'url': 'https://courses.edx.org/courses/course-v1:MITx+6.00.2x_3+1T2015/info'
+			'url': 'https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-6'
 		}
 	],
 	'display': function () {
 		$('#education').append(HTMLschoolStart);
-		
+
 		for (school in education.schools) {
-			var formattedSchool = HTMLschoolName.replace('%data%', education.schools[school].name).replace('#', education.schools.url);
+			var formattedSchool = HTMLschoolName.replace('%data%', education.schools[school].name).replace('#', education.schools[school].url);
 			var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
 			var formattedDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
 			var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
 			var formattedMajors = HTMLschoolMajor.replace('%data%', education.schools[school].majors);
 
-			$('.education-entry').append(formattedSchool);
-			$('.education-entry a').append(formattedDegree);
-			$('.education-entry').append(formattedDates);
-			$('.education-entry').append(formattedLocation);
-			$('.education-entry').append(formattedMajors);
+			$('.education-entry:last').append(formattedSchool);
+			$('.education-entry:last a').append(formattedDegree);
+			$('.education-entry:last').append(formattedDates);
+			$('.education-entry:last').append(formattedLocation);
+			$('.education-entry:last').append(formattedMajors);
 		}
+
+		$('#education').append(HTMLonlineClasses);
+		$('#education').append(HTMLschoolStart);
+
+		for (course in education.onlineCourses) {
+			var formattedTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[course].title).replace('#', education.onlineCourses[course].url);
+			var formattedSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[course].school);
+			var formattedDates = HTMLonlineDates.replace('%data%', education.onlineCourses[course].date);
+			var formattedURL = HTMLonlineURL.replace('%data%', education.onlineCourses[course].url).replace('#', education.onlineCourses[course].url);
+
+			$('.education-entry:last').append(formattedTitle);
+			$('.education-entry:last').append(formattedSchool);
+			$('.education-entry:last').append(formattedDates);
+			$('.education-entry:last').append(formattedURL);
+		};
 	}
 };
 
