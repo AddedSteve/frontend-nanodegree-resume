@@ -155,9 +155,9 @@ var education = {
 		};
 	}
 };
-
 bio.display();
 work.display();
 projects.display();
 education.display();
+$('#mapDiv').append(googleMap);
 
