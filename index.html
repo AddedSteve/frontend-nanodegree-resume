@@ -51,7 +51,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-  <div id="main">
+  <img id="mouse-img" src="https://media.licdn.com/media/AAEAAQAAAAAAAAL5AAAAJGUwZTg2MzU1LWJkNmMtNDQ4MC04Y2Y2LTBjOWRmZGViYTZiOQ.jpg" style="display:none; border-radius: 100%;" width="60" height="60">
+  <div id="main" class="grid">
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
@@ -59,25 +60,25 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     resume below. You can pretty easily figure out what each section will
     display by looking at the id or at what's written between the <h2> tags.
     -->
-    <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
+    <div id="header" class="center-content clear-fix grid__item one-whole">
+      <ul id="topContacts" class="flex-box grid__item one-whole"></ul>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
+    <div id="workExperience" class="gray grid__item one-whole text--center">
       <h2>Work Experience</h2>
     </div>
-    <div id="projects">
+    <div id="projects" class="grid__item one-whole text--center">
       <h2>Projects</h2>
     </div>
-    <div id="education" class="gray">
+    <div id="education" class="gray grid__item one-whole text--center">
       <h2>Education</h2>
     </div>
-    <div id="mapDiv">
+    <div id="mapDiv" class="grid__item one-whole">
       <h2>Where I've Lived and Worked</h2>
     </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
+    <div id="lets-connect" class="dark-gray grid__item one-whole">
+      <h2 class="white-text center-text grid__item one-whole">Let's Connect</h2>
+        <ul id="footerContacts" class="flex-box grid__item one-whole">
       </ul>
     </div>
   </div>

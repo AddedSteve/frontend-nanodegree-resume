@@ -161,3 +161,19 @@ projects.display();
 education.display();
 $('#mapDiv').append(googleMap);
 
+var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+var formattedGithub = HTMLgithub.replace('%data%', bio.contacts.github);
+var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+$('#footerContacts').append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation);
+
+// Use JavaScript to make my profile image follow the mouse cursor
+$(document).mousemove(function() {
+	$('#mouse-img').css('display', 'block').css('position','fixed');
+	var left = String(event.pageX) + "px";
+	var top = String(event.pageY) + "px";
+	$('#mouse-img').css("left", left);
+	$('#mouse-img').css("top", top);
+});
+
